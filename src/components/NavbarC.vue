@@ -51,4 +51,9 @@ a:hover {
     background-color: black;
     border-radius: 5px;
 }
+a.router-link-active {
+  background-color: black;
+  color: #FCD900;
+  border-radius: 5px;
+}
 </style>

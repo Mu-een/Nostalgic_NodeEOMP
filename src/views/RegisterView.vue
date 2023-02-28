@@ -27,7 +27,10 @@
             </div>
             <div class="mb-3">
                 <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Profile URL">
-            </div><br>
+            </div>
+            <div class="mb-3">
+                <input type="date" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Date Joined">
+            </div>
             <div class="text-center">
                 <button type="submit" class="btn w-10 btn-lg btn-dark">Register</button>
             </div>
@@ -39,13 +42,39 @@
 <script>
 import NavbarC from '../components/NavbarC.vue'
 import FooterC from '../components/FooterC.vue'
+import {computed} from '@vue/runtime-core'; 
+import { useStore  } from 'vuex';
     export default {
         name: 'RegisterView',
         components : {
             NavbarC,
             FooterC
-        }
+        },
+        setup(){
+            const payload = {
+                firstName: '',
+                lastName: '',
+                gender: '',
+                cellPhone: '',
+                email: '',
+                userPassword: '',
+                userImg: '',
+                joinDate: ''
+        };
+      const store = useStore();
+      const signUp = ()=> {
+          store.dispatch("register", payload);
+      }
+      const userMessage = 
+      computed( ()=>store.state.message )
+      return {
+        payload,
+        userMessage,
+        signUp
+      }
     }
+}
+    
 </script>
 
 <style scoped>

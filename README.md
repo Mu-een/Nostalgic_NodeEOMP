@@ -2,10 +2,10 @@
 
 **Imraan Bernksen**
 
-userID: 1,<br />
+userID = 1<br />
 firstName = Imraan<br />
 lastName = Bernsken<br />
-gender = Male
+gender = Male<br />
 cellPhone = 0681278921<br />
 email = imraanbernksen@gmail.com<br />
 userPassword = Imraan123<br />
@@ -26,7 +26,9 @@ userImg = https://i.postimg.cc/dVq2NQGN/nissan.jpg<br />
 
 ## LECTURERS ##
 
-userID: 6<br />
+**The Lecturers**
+
+userID = 6<br />
 firstName = The<br />
 lastName = Lecturers<br />
 gender = Male<br />

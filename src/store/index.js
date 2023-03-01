@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import axios from 'axios';
-const nostalgicAPI = "";
+const nostalgicAPI = "https://nostalgic-backend.onrender.com/"
 
 export default createStore({
   state: {
@@ -9,6 +9,7 @@ export default createStore({
     product: null,
     products: null,
     theSpinner: null,
+    asc: true,
     message: null
   },
   getters: {
@@ -17,51 +18,43 @@ export default createStore({
     theUser(state, value) {
       state.user = value
     },
-    theUsers(state,values) {
+    theUsers(state, values) {
       state.users = values
     },
-    theProduct(state,value) {
+    theProduct(state, value) {
       state.product = value
     },
-    theProducts(state,values){
+    theProducts(state, values){
       state.products = values
     },
     setSpinner(state, value) {
       state.spinner = value
     },
-    theMessage(state, value) {
+    sortProductsPrice: (state) => {
+      state.properties.sort((a, b)=>{
+        return a.price - b.price;
+      });
+      if (!state.asc) {
+        state.products.reverse();
+      }
+      state.asc = !state.asc;
+    },
+    setMessage(state, value) {
       state.message = value
     }
   },
   actions: {
-    async login(context, payload) {
-      const res = await axios.post(`${nostalgicAPI}login`, payload);
+    async getProducts(context, payload) {
+      const res = await axios.get(`${nostalgicAPI}Products`,payload);
       const {result, err} = await res.data;
-      if(result) {
-        context.commit('theUser', result);
-      } else {
-        context.commit('theMessage',err);
-      }
-    },
-    async register(context, payload) {
-      let res = await axios.post(`${nostalgicAPI}register`, payload);
-      let {message, err} = await res.data;
-      if(message) {
-        context.commit('theMessage',message);
-      } else {
-        context.commit('theMessage', err);
-      }
-    },
-    async getProduct(context, id) {
-      let res = await axios.get(`${nostalgicAPI}getProduct` + id);
-      let {result, err} = await res.data;
       if(result){
-        context.commit('theUser', result);
+        context.commit('theProducts',result);
       } else {
-        context.commit('theMessage', err);
+        context.commit('setMessage',err);
       }
     }
   },
   modules: {
   }
 })
+

@@ -8,28 +8,28 @@
         </div>
         <form>
             <div class="mb-3">
-                <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="First Name">
+                <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="First Name" required v-model="payload.firstName">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Last Name">
+                <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Last Name" v-model="payload.lastName">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Gender">
+                <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Gender" v-model="payload.gender">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Cellphone Number">
+                <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Cellphone Number" v-model="payload.cellPhone">
             </div>
             <div class="mb-3">
-                <input type="email" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Email">
+                <input type="email" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Email" v-model="payload.email">
             </div>
             <div class="mb-3">
-                <input type="password" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Password">
+                <input type="password" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Password" v-model="payload.userPassword">
             </div>
             <div class="mb-3">
-                <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Profile URL">
+                <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Profile URL" v-model="payload.userImg">
             </div>
             <div class="mb-3">
-                <input type="date" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Date Joined">
+                <input type="date" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="Date Joined" v-model="payload.joinDate">
             </div>
             <div class="text-center">
                 <button type="submit" class="btn w-10 btn-lg btn-dark">Register</button>

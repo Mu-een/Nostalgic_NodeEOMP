@@ -3,6 +3,7 @@ const db = require('../config');
 const {hash, compare, hashSync } = require('bcrypt');
 
 const {createToken} = require('../middleware/AuthenticatedUser');
+
 /** User **/
 class User {
     login(req, res) {

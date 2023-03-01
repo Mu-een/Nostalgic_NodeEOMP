@@ -1,24 +1,37 @@
-# nostalgic_frontend
+### TEAM ###
 
-## Project setup
-```
-npm install
-```
+/// Imraan Bernksen ///
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
+"userID": 1,
+"firstName": "Imraan",
+"lastName": "Bernsken",
+"gender": "Male",
+"cellPhone": "0681278921",
+"email": "imraanbernksen@gmail.com",
+"userPassword": "Imraan123",
+"userRole": "Admin",
+"userImg": "https://i.postimg.cc/kXZsqSPz/t0.jpg"
 
-### Compiles and minifies for production
-```
-npm run build
-```
+/// Mueen Slamat ///
 
-### Lints and fixes files
-```
-npm run lint
-```
+"userID": 2,
+"firstName": "Mueen",
+"lastName": "Slamat",
+"gender": "Male",
+"cellPhone": "0612345678",
+"email": "mueenslamat@gmail.com",
+"userPassword": "Mueen123",
+"userRole": "Admin",
+"userImg": "https://i.postimg.cc/dVq2NQGN/nissan.jpg"
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## LECTURERS ##
+
+"userID": 6,
+"firstName": "The",
+"lastName": "Lecturers",
+"gender": "Male",
+"cellPhone": "0670123489",
+"email": "lecturer@gmail.com",
+"userPassword": "Lecturers123",
+"userRole": "Admin",
+"userImg": "https://i.postimg.cc/FRk6kst9/wallpaper3.jpg"

@@ -26,7 +26,7 @@ userImg = https://i.postimg.cc/gk1Rx1wb/Default-User-Profile.jpg<br />
 
 ## LECTURERS ##
 
-**The Lecturers**
+**Lecturer Staff**
 
 userID = 6<br />
 firstName = Lecturer<br />

@@ -10,7 +10,7 @@ class User {
         const {email, userPassword} = req.body;
         const strQry = 
         `
-        SELECT firstName, lastName, gender, email, userPassword, userRole, userImg, joinDate
+        SELECT firstName, lastName, gender, email, userPassword, userRole, userImg, DATE_FORMAT(joinDate, %d-%m-%Y) AS joinDate
         FROM Users
         WHERE email = '${email}';
         `;

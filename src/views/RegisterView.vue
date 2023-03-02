@@ -6,7 +6,7 @@
             <h3 class="text-center">BECOME A NOSTALGIC MEMBER</h3>
             <p class="text-center">Create your Nostalgic member profile and get access to the best of Nostalgic products</p>
         </div>
-        <form>
+        <form class="form" @submit.prevent="signUp">
             <div class="mb-3">
                 <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="First Name" required v-model="payload.firstName">
             </div>
@@ -33,6 +33,9 @@
             </div>
             <div class="text-center">
                 <button type="submit" class="btn w-10 btn-lg btn-dark">Register</button>
+            </div>
+            <div>
+                <label class="form-control" v-show="userMessage">{{ userMessage }}</label>
             </div>
         </form>
     </div>

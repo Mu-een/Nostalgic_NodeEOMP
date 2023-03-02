@@ -30,27 +30,54 @@ export default createStore({
     setSpinner(state, value) {
       state.spinner = value
     },
-    sortProductsPrice: (state) => {
-      state.properties.sort((a, b)=>{
-        return a.price - b.price;
-      });
-      if (!state.asc) {
-        state.products.reverse();
-      }
-      state.asc = !state.asc;
-    },
     setMessage(state, value) {
       state.message = value
     }
   },
   actions: {
-    async getProducts(context, payload) {
-      const res = await axios.get(`${nostalgicAPI}Products`,payload);
-      const {result, err} = await res.data;
-      if(result){
-        context.commit('theProducts',result);
+    async getProducts(context) {
+      const res = await axios.get(`${nostalgicAPI}Products`);
+      let { results, err} = await res.data;
+      if(results) {
+        context.commit('theProducts', results)
+      }else {
+        context.commit('setMessage', err)
+      }
+    },
+    async getProduct(context) {
+      const res = await axios.get(`${nostalgicAPI}Products`);
+      let { results, err} = await res.data;
+      if(results) {
+        context.commit('theProduct', results)
+      }else {
+        context.commit('setMessage', err)
+      }
+    },
+    async getUsers(context) {
+      const res = await axios.get(`${nostalgicAPI}Users`);
+      let { results, err} = await res.data;
+      if(results) {
+        context.commit('theUsers', results)
+      }else {
+        context.commit('setMessage', err)
+      }
+    },
+    async getUser(context) {
+      const res = await axios.get(`${nostalgicAPI}Users`);
+      let { results, err} = await res.data;
+      if(results) {
+        context.commit('theUser', results)
+      }else {
+        context.commit('setMessage', err)
+      }
+    },
+    async register(context, payload) {
+      const res = await axios.post(`${nostalgicAPI}Users`, payload);
+      let {msg ,err} =await res.data;
+      if(msg){
+        context.commit('setMessage',msg);
       } else {
-        context.commit('setMessage',err);
+        context.commit('setMessage', err);
       }
     }
   },

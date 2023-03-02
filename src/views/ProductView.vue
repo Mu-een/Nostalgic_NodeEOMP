@@ -1,17 +1,12 @@
 <template>
-    <NavbarC />
-    <FooterC/>
+    <div>
+
+    </div>
 </template>
 
 <script>
-import NavbarC from '../components/NavbarC.vue'
-import FooterC from '../components/FooterC.vue'
     export default {
-        name: 'ProductView',
-        components : {
-            NavbarC,
-            FooterC
-        }
+        
     }
 </script>
 

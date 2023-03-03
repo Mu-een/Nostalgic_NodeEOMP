@@ -1,6 +1,6 @@
 <template>
     <NavbarC />
-    <img src="https://i.postimg.cc/JhQmWfWn/nostalgic-logo-removebg-preview.png" alt="">
+    <!-- <img src="https://i.postimg.cc/JhQmWfWn/nostalgic-logo-removebg-preview.png" alt="">
     <div class="container text-center">
         <h3 class="display-3">Login</h3>
         <p>Welcome back!</p> 
@@ -10,8 +10,25 @@
             <input type="text" class="form-control" placeholder="password"><br>
             <button type="button" class="btn btn-lg">Continue</button>
         </form>
+    </div> -->
+
+    <div class="container-fluid">
+        <div class="row register">
+            <img src="https://i.postimg.cc/JhQmWfWn/nostalgic-logo-removebg-preview.png"  alt="">
+            <h3 class="text-center">LOGIN</h3>
+            <p class="text-center">Login to access Nostalgic</p>
+        </div>
+        <form class="form">
+            <div class="mb-3">
+                <input type="email" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="email" >
+            </div>
+            <div class="mb-3">
+                <input type="text" class="form-control w-50 mx-auto" id="exampleFormControlInput1" placeholder="password" >
+            </div>
+            <button type="button" class="btn btn-lg d-flex m-auto">Login</button>
+        </form>
     </div>
-    <FooterC/>
+    <FooterC/>  
 </template>
 
 <script>

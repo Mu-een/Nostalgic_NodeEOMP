@@ -9,4 +9,7 @@
   min-height: 100vh;
   background-color: #035397;
 }
+footer {
+  overflow-x: hidden;
+}
 </style>

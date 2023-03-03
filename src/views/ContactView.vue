@@ -23,7 +23,7 @@
            <textarea class="form-control" rows="3" placeholder="Type your message here .." required="required"></textarea>
          </div>
          <div>
-            <button type="submit button" class="btn btn-outline-dark">Send</button>
+            <button type="submit button" class="btn btn-lg">Send</button>
          </div>
         </form>
     <FoundersCards/>
@@ -55,5 +55,12 @@ import FooterC from '../components/FooterC.vue'
 form {
     font-family: monospace;
     font-size: 20px;
+}
+.btn {
+    color: black;
+}
+.btn:hover {
+    color: #fcd900;
+    background-color: black;
 }
 </style>

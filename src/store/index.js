@@ -10,7 +10,8 @@ export default createStore({
     products: null,
     theSpinner: null,
     asc: true,
-    message: null
+    message: null,
+    isLoggedIn: false
   },
   getters: {
   },
@@ -32,6 +33,18 @@ export default createStore({
     },
     setMessage(state, value) {
       state.message = value
+    },
+    sortProductsByPrice: (state) => {
+      state.products.sort((a, b) => {
+        return a.price - b.price;
+      });
+      if (!state.asc) {
+        state.products.reverse();
+      }
+      state.asc = !state.asc;
+    }, 
+    setIsLoggedIn(state, isLoggedin) {
+      state.isLoggedIn = isLoggedin;
     }
   },
   actions: {
@@ -40,15 +53,6 @@ export default createStore({
       let { results, err} = await res.data;
       if(results) {
         context.commit('theProducts', results)
-      }else {
-        context.commit('setMessage', err)
-      }
-    },
-    async getProduct(context) {
-      const res = await axios.get(`${nostalgicAPI}Products`);
-      let { results, err} = await res.data;
-      if(results) {
-        context.commit('theProduct', results)
       }else {
         context.commit('setMessage', err)
       }
@@ -62,23 +66,23 @@ export default createStore({
         context.commit('setMessage', err)
       }
     },
-    async getUser(context) {
-      const res = await axios.get(`${nostalgicAPI}Users`);
-      let { results, err} = await res.data;
-      if(results) {
-        context.commit('theUser', results)
-      }else {
-        context.commit('setMessage', err)
+    async login({ commit }, {email, userPassword}) {
+      try {
+        const response = await axios.post('/login', { email, userPassword });
+        const { token, user } = response.data;
+        localStorage.setItem('token', token);
+        commit('theUser', user);
+        commit('setIsLoggedIn', true);
+        return true;
+      } catch (error) {
+        console.error(error);
+        return false;
       }
     },
-    async register(context, payload) {
-      const res = await axios.post(`${nostalgicAPI}Users`, payload);
-      let {msg ,err} =await res.data;
-      if(msg){
-        context.commit('setMessage',msg);
-      } else {
-        context.commit('setMessage', err);
-      }
+    logout({ commit }) {
+      localStorage.removeItem('token');
+      commit('theUser', null);
+      commit('setIsLoggedIn', false);
     }
   },
   modules: {

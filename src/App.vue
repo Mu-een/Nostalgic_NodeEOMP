@@ -13,9 +13,5 @@
 footer {
   overflow-x: hidden;
 }
-/* @media only screen and (min-width: 300px) and (max-width: 720px) {
-  .app {
-    width: 100%;
-  }
-} */
+
 </style>

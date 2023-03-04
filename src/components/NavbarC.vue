@@ -56,4 +56,18 @@ a.router-link-active {
   color: #FCD900;
   border-radius: 5px;
 }
+
+
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+nav ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 20px;
+}
+
 </style>

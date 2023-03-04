@@ -27,7 +27,7 @@
             </div>
             <button type="button" class="btn btn-lg d-flex m-auto">Login</button>
         </form>
-    </div>
+    </div><br>
     <FooterC/>  
 </template>
 
@@ -67,6 +67,9 @@ img {
     display: block;
     text-align: center;
     margin: auto;
+}
+.form {
+    margin-bottom: 222px;
 }
 .form-control {
     box-shadow: 2px 2px 2px 3px #fcd900;

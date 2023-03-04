@@ -33,7 +33,7 @@
     <button class="form-control btn btn-dark sortBtn text-center m-auto d-flex" @click="sortbyPrice">Price<i class="bi bi-arrow-down-up"></i></button><br>
       <SpinnerC v-if="isLoading"/>
       <div v-else>
-        <ProductCard/>
+        <ProductCard class="productCard"/>
       </div>
     <FooterC/>
 </template>
@@ -98,5 +98,9 @@ button {
 }
 .sortBtn {
   width: 75px;
+}
+
+.productCard {
+  margin-bottom: 200px;
 }
 </style>

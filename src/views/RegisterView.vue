@@ -38,7 +38,7 @@
                 <label class="form-control" v-show="userMessage"></label>
             </div>
         </form>
-    </div>
+    </div><br>
     <FooterC/>
 </template>
 
@@ -76,5 +76,8 @@ img {
 .btn:hover {
     color: #fcd900;
     background-color: black;
+}
+.form {
+    margin-bottom: 150px;
 }
 </style>

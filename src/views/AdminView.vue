@@ -3,7 +3,7 @@
     <h3 class="text-center display-3">Users</h3>
     <AddUser/><br>
   <SpinnerC v-if="isLoading"/>
-  <div class="container-fluid" v-else>
+  <div class="container-fluid table-responsive" v-else>
       <!-- Users table -->
       <table class="table table-hover table-light table-borderless" >
     <thead>
@@ -45,7 +45,7 @@
 <h3 class="display-3 text-center">Products</h3>
 <AddProduct/><br>
 <SpinnerC v-if="isLoading"/>
-<div class="container-fluid" v-else>
+<div class="container-fluid table-responsive" v-else>
   <table class="table table-hover table-light table-borderless" >
     <thead>
         <tr class="text-center" >
@@ -130,5 +130,28 @@ img {
     width: 20vh;
     height: auto;
     border-radius: 30px;
+}
+.table {
+  margin-bottom: 200px;
+}
+@media screen and(max-width: 720px) and (min-width: 300px) {
+  .table {
+    display: block;
+    width: 100%;
+    overflow-x: hidden;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  table, thead, tbody, th, td, tr {
+    display: block;
+  }
+  th {
+    text-align: left;
+  }
+  tbody td:before {
+    float: left;
+    font-weight: bold;
+  }
 }
 </style>
